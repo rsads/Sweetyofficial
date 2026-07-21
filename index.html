@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweety Official ™ {2018}</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    color:#fff;
+    background:
+    radial-gradient(circle at 15% 15%,rgba(0,229,255,.18),transparent 30%),
+    radial-gradient(circle at 85% 85%,rgba(91,70,255,.22),transparent 32%),
+    linear-gradient(135deg,#030912,#071b2b 50%,#03050a);
+}
+
+/* Background Grid */
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.07;
+    background-image:
+    linear-gradient(90deg,#fff 1px,transparent 1px),
+    linear-gradient(#fff 1px,transparent 1px);
+    background-size:50px 50px;
+}
+
+/* Main Area */
+.container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* Main Card */
+.card{
+    width:100%;
+    max-width:440px;
+    position:relative;
+    text-align:center;
+    padding:28px 22px 25px;
+    border-radius:30px;
+    background:rgba(3,14,25,.82);
+    border:1px solid rgba(0,220,255,.4);
+    backdrop-filter:blur(15px);
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.8),
+    0 0 50px rgba(0,210,255,.12);
+    overflow:hidden;
+}
+
+/* Glow */
+.card:before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    top:-150px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:rgba(0,220,255,.16);
+    filter:blur(55px);
+}
+
+/* Badge */
+.badge{
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    padding:8px 16px;
+    margin-bottom:16px;
+    border-radius:30px;
+    color:#72edff;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:rgba(0,220,255,.08);
+    border:1px solid rgba(0,220,255,.4);
+}
+
+/* Logo */
+.logo-wrap{
+    position:relative;
+    z-index:2;
+    width:150px;
+    height:150px;
+    margin:0 auto 17px;
+}
+
+.logo-wrap:before{
+    content:"";
+    position:absolute;
+    inset:-7px;
+    border-radius:50%;
+    background:
+    linear-gradient(
+        135deg,
+        #00e5ff,
+        #d8ffff,
+        #4169ff,
+        #00e5ff
+    );
+    animation:rotate 6s linear infinite;
+}
+
+.logo{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #06101a;
+}
+
+/* Heading */
+h1{
+    position:relative;
+    z-index:2;
+    font-size:28px;
+    line-height:1.2;
+    font-weight:900;
+    text-shadow:0 0 20px rgba(0,220,255,.25);
+}
+
+h1 span{
+    color:#63eaff;
+}
+
+/* Description */
+.subtitle{
+    position:relative;
+    z-index:2;
+    margin:12px auto 19px;
+    max-width:360px;
+    color:#c6d3dc;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* Feature Boxes */
+.features{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.feature{
+    padding:11px 4px;
+    border-radius:14px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    color:#e2edf2;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.feature b{
+    display:block;
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+/* CTA Button */
+.cta{
+    position:relative;
+    z-index:2;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    padding:17px 18px;
+    border-radius:16px;
+    text-decoration:none;
+    color:#021018;
+    font-size:15px;
+    font-weight:900;
+    background:
+    linear-gradient(
+        135deg,
+        #9cf6ff,
+        #16d9ff,
+        #657cff
+    );
+    box-shadow:
+    0 10px 35px rgba(0,210,255,.3);
+    animation:pulse 2.2s infinite;
+    transition:.25s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+}
+
+.telegram{
+    width:22px;
+    height:22px;
+    fill:#021018;
+}
+
+/* Bottom Text */
+.note{
+    position:relative;
+    z-index:2;
+    margin-top:13px;
+    color:#7c909c;
+    font-size:10px;
+}
+
+.footer{
+    position:relative;
+    z-index:2;
+    margin-top:17px;
+    color:#526571;
+    font-size:9px;
+}
+
+/* Animated Cricket Ball */
+.ball{
+    position:fixed;
+    z-index:1;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:
+    radial-gradient(
+        circle at 35% 30%,
+        #ffb1c3,
+        #ff426d 55%,
+        #a80032
+    );
+    box-shadow:0 0 20px rgba(255,40,90,.7);
+    animation:ballMove 5s ease-in-out infinite;
+}
+
+/* Animated Batsman */
+.batsman{
+    position:fixed;
+    z-index:1;
+    left:-100px;
+    bottom:12%;
+    width:70px;
+    height:100px;
+    animation:playerMove 9s linear infinite;
+}
+
+/* Head */
+.batsman .head{
+    position:absolute;
+    top:0;
+    left:25px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#d9a17c;
+}
+
+/* Body */
+.batsman .body{
+    position:absolute;
+    top:18px;
+    left:20px;
+    width:28px;
+    height:42px;
+    border-radius:8px;
+    background:linear-gradient(
+        #13d9ff,
+        #1764db
+    );
+}
+
+/* Legs */
+.batsman .leg1,
+.batsman .leg2{
+    position:absolute;
+    top:57px;
+    width:9px;
+    height:38px;
+    border-radius:8px;
+    background:#e8edf5;
+}
+
+.batsman .leg1{
+    left:22px;
+    transform:rotate(10deg);
+}
+
+.batsman .leg2{
+    left:39px;
+    transform:rotate(-10deg);
+}
+
+/* Bat */
+.bat{
+    position:absolute;
+    left:42px;
+    top:25px;
+    width:55px;
+    height:9px;
+    border-radius:8px;
+    background:
+    linear-gradient(
+        90deg,
+        #b56a2b,
+        #ffd58d,
+        #a85b24
+    );
+    transform:rotate(-35deg);
+}
+
+/* Animations */
+@keyframes rotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes pulse{
+    0%,100%{
+        box-shadow:0 10px 35px rgba(0,210,255,.25);
+    }
+    50%{
+        box-shadow:0 10px 50px rgba(0,210,255,.65);
+    }
+}
+
+@keyframes ballMove{
+    0%{
+        left:5%;
+        top:75%;
+        transform:scale(.7);
+    }
+
+    40%{
+        left:42%;
+        top:40%;
+        transform:scale(1.2);
+    }
+
+    70%{
+        left:72%;
+        top:58%;
+        transform:scale(.9);
+    }
+
+    100%{
+        left:105%;
+        top:25%;
+        transform:scale(.6);
+    }
+}
+
+@keyframes playerMove{
+    0%{
+        left:-100px;
+        transform:scale(.8);
+    }
+
+    45%{
+        left:45%;
+        transform:scale(1);
+    }
+
+    70%{
+        left:72%;
+        transform:scale(.9);
+    }
+
+    100%{
+        left:110%;
+        transform:scale(.7);
+    }
+}
+
+/* Mobile */
+@media(max-width:380px){
+
+    .card{
+        padding:23px 16px;
+    }
+
+    .logo-wrap{
+        width:132px;
+        height:132px;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    .subtitle{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Animated Cricket Elements -->
+<div class="ball"></div>
+
+<div class="batsman">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="leg1"></div>
+    <div class="leg2"></div>
+    <div class="bat"></div>
+</div>
+
+<div class="container">
+
+<main class="card">
+
+    <div class="badge">
+        🏏 Cricket Community • Since 2018
+    </div>
+
+    <!-- Upload your logo/photo as logo.jpg -->
+    <div class="logo-wrap">
+        <img 
+            src="logo.jpg" 
+            class="logo" 
+            alt="Sweety Official"
+        >
+    </div>
+
+    <h1>
+        Sweety Official 
+        <span>™ {2018}</span>
+    </h1>
+
+    <p class="subtitle">
+        Cricket lovers ke liye ek dedicated community —
+        match updates, cricket moments aur interesting insights
+        ek hi jagah.
+    </p>
+
+    <div class="features">
+
+        <div class="feature">
+            <b>🏏</b>
+            Cricket
+        </div>
+
+        <div class="feature">
+            <b>📢</b>
+            Updates
+        </div>
+
+        <div class="feature">
+            <b>⚡</b>
+            Fast News
+        </div>
+
+    </div>
+
+    <!-- Telegram Button -->
+    <a 
+        class="cta"
+        href="https://t.me/+_QIecFxRQps1MTc9"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <svg 
+            class="telegram"
+            viewBox="0 0 24 24"
+        >
+            <path d="M21.4 3.6 2.9 10.7c-1.3.5-1.3 1.2-.2 1.5l4.7 1.5 1.8 5.7c.2.6.1.8.7.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.3 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4ZM8.1 13.4l10.9-6.9c.5-.3 1-.1.6.2l-8.8 8-.3 3.1-1.5-4.4-3.4-1.1c-.7-.2-.7-.5.1-.9l2.4-1Z"/>
+        </svg>
+
+        JOIN TELEGRAM CHANNEL
+
+    </a>
+
+    <div class="note">
+        Tap the button above to join the cricket community
+    </div>
+
+    <div class="footer">
+        © 2026 Sweety Official ™ {2018}
+    </div>
+
+</main>
+
+</div>
+
+</body>
+</html>
